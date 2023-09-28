@@ -2,11 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <title>Health Hepta Project</title>
     <link rel="icon" type="image/x-icon" href="media/fav_logo.ico">
     <script src="https://kit.fontawesome.com/820f450a7b.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <!--Stylesheet-->
@@ -14,13 +17,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" />
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"> -->
 
     <style>
         * {
@@ -83,10 +81,6 @@
             margin-top: 40px;
 
         }
-
-        /* .heading{
-    margin-top: 10px;
-} */
         h3 {
             padding: 30px 0 8px;
             position: relative;
@@ -134,17 +128,6 @@
             color: #e92e3d;
 
         }
-
-
-
-        /* delete this if enable flex in options */
-        /* .options-dept{
-    margin-bottom: 7px;
-}
-.options-sem{
-    margin-top: 7px;
-} */
-        /* delete this if enable flex in options */
     </style>
 </head>
 
@@ -165,14 +148,14 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-phone"></i>*&nbsp;91+</span>
-                    <input name="userPhoneNumber" type="text" class="form-control" placeholder="Phone Number" aria-label="Phone Number"
-                        aria-describedby="basic-addon1" required>
+                    <input name="userPhoneNumber" type="text" class="form-control" placeholder="Phone Number"
+                        aria-label="Phone Number" aria-describedby="basic-addon1" required>
                 </div>
-    
+
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i>*</span>
-                    <input name="userEmail" type="text" class="form-control" placeholder="Email Address" aria-label="Email Address"
-                        aria-describedby="basic-addon2" required>
+                    <input name="userEmail" type="text" class="form-control" placeholder="Email Address"
+                        aria-label="Email Address" aria-describedby="basic-addon2" required>
                     <span class="input-group-text" id="basic-addon2">@gmail.com</span>
                 </div>
                 <div style="margin-bottom: 15px;">
@@ -188,10 +171,11 @@
                         <option value="Psychiatrists">Psychiatrists</option>
                     </select>
                 </div>
-    
+
                 <div class="flex">
                     <div class="input-group mb-3 options-dept">
-                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-calendar-days"></i>*</span>
+                        <span class="input-group-text" id="basic-addon1"><i
+                                class="fa-solid fa-calendar-days"></i>*</span>
                         <input name="date" type="date" class="form-control" placeholder="Name" aria-label="Phone Number"
                             aria-describedby="basic-addon1" required>
                     </div>
@@ -201,9 +185,9 @@
                             aria-describedby="basic-addon1" required>
                     </div>
                 </div>
-    
-    
-    
+
+
+
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Remarks</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" name="remarks" rows="3"
@@ -213,8 +197,8 @@
                     <label id="test" class="mend">* are menatory to Book this Appoinment</label>
                 </div>
             </div>
-    
-    
+
+
             <p id="total"></p>
             <button class="btn btn-danger" type="submit" id="btn" style="margin-top: -50px;">Book Now</button>
         </div>
@@ -226,24 +210,14 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
         </script>
-    <!--API code-->
-    <script>
-        
-           
-
-
-
-
-    </script>
-    <!--------------------->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    
     <script src="https://kit.fontawesome.com/820f450a7b.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
         </script>
-    
+
 </body>
 
 </html>

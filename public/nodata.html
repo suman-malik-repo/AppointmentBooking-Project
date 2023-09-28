@@ -5,12 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <title>My Booked Appoinment</title>
+    <title>No DATA Found</title>
     <link rel="icon" type="image/x-icon" href="media/fav_logo.ico">
     <script src="https://kit.fontawesome.com/820f450a7b.js" crossorigin="anonymous"></script>
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <!--Stylesheet-->
+    <!-- <link rel="stylesheet" href="certificate.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css" />
@@ -32,8 +33,8 @@ body{
     background-size: 100% 50%;
 }
 .container{
-    width: 1200px;
-    height: 400px;
+    width: 1000px;
+    height: 500px;
     padding: 50px;
     /* margin: 10px; */
     margin-top: 10px;
@@ -65,9 +66,6 @@ button{
     border-radius: 5px;
     cursor: pointer;
 }
-.heading{
-    margin-top: 10px;
-}
 h3 {
     padding: 30px 0 8px;
     position: relative;
@@ -88,34 +86,16 @@ h3 {
 
 
 
+
     </style>
 </head>
 
 <body>
     
     <div class="container">
-        <h3 class="heading">My Booked Appointmemt</h3>
-        <table class="table" style="margin-top: 40px; text-align: center;">
-            <thead class="table-dark">
-              <th>Name</th>
-              <th>Ph NO.</th>
-              <th>Email</th>
-              <th>Doctor</th>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Remarks</th>
-            </thead>
-            <tbody>
-                <td><%=data.name%></td>
-                <td><%=data.ph%></td>
-                <td><%=data.email%></td>
-                <td><%=data.doctor%></td>
-                <td><%=data.date%></td>
-                <td><%=data.time%></td>
-                <td><%=data.remarks%></td>
-            </tbody>
-            
-          </table>
+      <h1 style="font-size: 10vh;"><i class="fa-solid fa-circle-xmark" style="color: #e92e3d;"></i></h1>
+        <h2>Can't Fine any Appoinmentwith Your Number</h2>
+        <button type="button" class="btn btn-danger" style="margin-top: 70px;" onclick="location.href='/'">Go to HOME</button>
         
     </div>
     <!--Script-->

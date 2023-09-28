@@ -5,15 +5,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <title>My Booked Appoinment</title>
+    
+    <title>Submission Successfull</title>
     <link rel="icon" type="image/x-icon" href="media/fav_logo.ico">
     <script src="https://kit.fontawesome.com/820f450a7b.js" crossorigin="anonymous"></script>
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <!--Stylesheet-->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css" />
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" />
     
@@ -32,8 +35,8 @@ body{
     background-size: 100% 50%;
 }
 .container{
-    width: 1200px;
-    height: 400px;
+    width: 1000px;
+    height: 500px;
     padding: 50px;
     /* margin: 10px; */
     margin-top: 10px;
@@ -49,6 +52,7 @@ body{
     align-items: center;
     font-family: "Poppins",sans-serif;
 }
+
 p{
     font-size: 16px;
     margin: 30px 0;
@@ -64,9 +68,6 @@ button{
     letter-spacing: 1px;
     border-radius: 5px;
     cursor: pointer;
-}
-.heading{
-    margin-top: 10px;
 }
 h3 {
     padding: 30px 0 8px;
@@ -86,42 +87,30 @@ h3 {
   }
 
 
-
-
     </style>
 </head>
 
 <body>
     
     <div class="container">
-        <h3 class="heading">My Booked Appointmemt</h3>
-        <table class="table" style="margin-top: 40px; text-align: center;">
-            <thead class="table-dark">
-              <th>Name</th>
-              <th>Ph NO.</th>
-              <th>Email</th>
-              <th>Doctor</th>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Remarks</th>
-            </thead>
-            <tbody>
-                <td><%=data.name%></td>
-                <td><%=data.ph%></td>
-                <td><%=data.email%></td>
-                <td><%=data.doctor%></td>
-                <td><%=data.date%></td>
-                <td><%=data.time%></td>
-                <td><%=data.remarks%></td>
-            </tbody>
-            
-          </table>
+      <h1 style="font-size: 10vh;"><i class="fa-solid fa-circle-check" style="color: #e92e3d;"></i></h1>
+        <h2>Appoinment Booked Successfully</h2>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-sm">
+              <div class="card" style="height: 200px; width: 600px;">
+                <div class="card-body" style="margin-left: 20px;"">
+                  <h5 class="card-title" style="text-align: center;"><%=result.name%> you Booked an Appointment</h5>
+                  
+                  <a href="main" class="btn btn-danger" style="padding-left: 50px;padding-right: 50px; margin-top: 50px; margin-left: 160px;">View Details</a>
+                </div>
+              </div>
+            </div>
         
     </div>
-    <!--Script-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     

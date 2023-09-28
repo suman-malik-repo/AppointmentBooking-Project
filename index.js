@@ -39,7 +39,7 @@ app.post('/book', (req, res) => {
       if (err) {
         throw err;
       }
-      res.status(201).sendFile(pubFolder+"/success.html");
+      res.status(201).render("success", { result });
     });
   });
 
@@ -50,12 +50,18 @@ app.get('/mybooking', (req, res) => {
         if (err) {
             throw err;
         }
-        res.render("mybooking", { result });
+        if (result.length === 0) {
+            // If no results are found, sending the nodata.html file
+            res.sendFile(pubFolder+"/nodata.html");
+        } else {
+            // If results are found, render the "mybooking" template with the result data
+            res.render("mybooking", { result });
+        }
     });
 });
 
 app.get('/viewall', (req, res) => {
-    const sql = 'SELECT * FROM UaserData';
+    const sql = 'SELECT * FROM UserData';
     db.query(sql, (err, results) => {
         if (err) {
             throw err;
@@ -63,10 +69,13 @@ app.get('/viewall', (req, res) => {
         res.render("allbooking", { results });
     });
 });
+app.get("/book/main",(req,res)=>{
+    res.sendFile(pubFolder+"/index.html");
+})
 
 app.get("*",(req,res)=>{
-    res.send("404 ERROR");
+    res.sendFile(pubFolder+"/error.html");
 })
 
 
-app.listen(process.argv.PORT || 5000);
+app.listen(5000);
