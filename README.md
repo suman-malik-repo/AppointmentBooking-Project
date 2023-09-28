@@ -34,7 +34,7 @@ it’s a prototype to demonstrate how user can book their appointment as well as
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/suman-malik-repo/HealthHepta-Project
 ```
 
 Go to the project directory
