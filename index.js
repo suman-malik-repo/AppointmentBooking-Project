@@ -2,27 +2,32 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const mysql = require("mysql");
+// const connection = require("./connection");
+// const mysql = require("mysql");
+
+// const bodyParser = require("body-parser");
+// app.use(bodyParser.json)
 
 app.use(express.urlencoded()); // midleware
 
 const pubFolder = path.join(__dirname,"/public");
 
-
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "user",
-    passwor: "123456"
+    host: "database-aws.cz3ndii0zph3.us-west-2.rds.amazonaws.com",
+    user: "adminaws",
+    database: "database-aws",
+    password: "12345678",
+    port: "3306"
 });
-
 db.connect((err)=>{
-    if(err){
-        console.log("not connected to database");
-        
+    if(!err){
+        console.log("Success");
     }
     else{
-        console.log("connected successfully")
+        console.log(err);
     }
 })
+
 
 
 app.get("/",(req,res)=>{
@@ -40,9 +45,9 @@ app.post("/api",(req,res)=>{
     console.log(req.body);
 })
 
-
-
-
+app.get("*",(req,res)=>{
+    res.send("404 ERROR")
+})
 
 
 
