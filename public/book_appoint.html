@@ -6,6 +6,7 @@
     <title>Health Hepta Project</title>
     <link rel="icon" type="image/x-icon" href="media/fav_logo.ico">
     <script src="https://kit.fontawesome.com/820f450a7b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <!--Stylesheet-->
@@ -149,7 +150,7 @@
 
 <body>
 
-    <form action="/api" method="POST">
+    <form action="/book" method="POST">
         <div class="container">
             <!-- <div class="dice-wrapper">
                 <img id="die-img" src="media/logo.png" height="120px">
@@ -177,14 +178,14 @@
                 <div style="margin-bottom: 15px;">
                     <label for="form-select">Choose Your Doctor</label>
                     <select name="doctor" class="form-select" aria-label="Department" required>
-                        <option selected value="0">General</option>
-                        <option value="1">Cardiologists</option>
-                        <option value="2">Dentist</option>
-                        <option value="3">Gynecologist</option>
-                        <option value="4">Orthopedic Surgeon</option>
-                        <option value="5">Radiologist</option>
-                        <option value="6">Neurologist</option>
-                        <option value="7">Psychiatrists</option>
+                        <option selected value="General">General</option>
+                        <option value="Cardiologists">Cardiologists</option>
+                        <option value="Dentist">Dentist</option>
+                        <option value="Gynecologist">Gynecologist</option>
+                        <option value="Orthopedic Surgeon">Orthopedic Surgeon</option>
+                        <option value="Radiologist">Radiologist</option>
+                        <option value="Neurologist">Neurologist</option>
+                        <option value="Psychiatrists">Psychiatrists</option>
                     </select>
                 </div>
     
@@ -227,7 +228,8 @@
         </script>
     <!--API code-->
     <script>
-
+        
+           
 
 
 

@@ -157,22 +157,26 @@ h3 {
               </div>
             </div>
             <div class="col-sm-4">
-              <div class="card" style="height: 200px;">
-                <div class="card-body" style="margin-left: 20px;">
-                  <h5 class="card-title">Check my Booked Appointment<h6><span class="badge badge-light">User</span></h6></h5>
-                 
-                  <a href="#" class="btn btn-danger" style="padding-left: 50px;padding-right: 50px; margin-top: 10px;">Check</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
+              <form action="/mybooking" method="get">
                 <div class="card" style="height: 200px;">
                   <div class="card-body" style="margin-left: 20px;">
-                    <h5 class="card-title">View Appointments<h6><span class="badge badge-dark">Doctor</span></h6></h5>
-                    
-                    <a href="view" class="btn btn-danger" style="padding-left: 50px;padding-right: 50px; margin-top: 30px;">View</a>
+                    <h5 class="card-title">Check my Booked Appointment<h6><span class="badge badge-light">User</span></h6></h5>
+                    <input type="number" maxlength="10" minlength="10">                
+                    <a type="submit class="btn btn-danger" style="padding-left: 50px;padding-right: 50px; margin-top: 10px;">Check</a>
                   </div>
                 </div>
+              </form>
+            </div>
+            <div class="col-sm-4">
+                <form action="/viewall" method="get">
+                  <div class="card" style="height: 200px;">
+                    <div class="card-body" style="margin-left: 20px;">
+                      <h5 class="card-title">View Appointments<h6><span class="badge badge-dark">Doctor</span></h6></h5>
+                      
+                      <a type="submit class="btn btn-danger" style="padding-left: 50px;padding-right: 50px; margin-top: 30px;">View</a>
+                    </div>
+                  </div>
+                </form>
               </div>
           </div>
         

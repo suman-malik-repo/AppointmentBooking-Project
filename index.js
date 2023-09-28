@@ -1,23 +1,23 @@
 const express = require("express");
-const app = express();
 const path = require("path");
 const mysql = require("mysql");
-// const connection = require("./connection");
-// const mysql = require("mysql");
+const bodyParser = require("body-parser");
 
-// const bodyParser = require("body-parser");
-// app.use(bodyParser.json)
+const app = express();
 
-app.use(express.urlencoded()); // midleware
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 const pubFolder = path.join(__dirname,"/public");
 
 const db = mysql.createConnection({
-    host: "database-aws.cz3ndii0zph3.us-west-2.rds.amazonaws.com",
-    user: "adminaws",
-    database: "database-aws",
-    password: "12345678",
-    port: "3306"
+    host: "localhost",
+    user: "root",
+    database: "HealthHepta",
+    password: "12345678"
 });
 db.connect((err)=>{
     if(!err){
@@ -28,32 +28,45 @@ db.connect((err)=>{
     }
 })
 
-
-
 app.get("/",(req,res)=>{
     res.sendFile(pubFolder+"/index.html")
 })
-app.get("/book",(req,res)=>{
-    res.sendFile(pubFolder+"/book_appoint.html")
-})
-app.get("/view",(req,res)=>{
-    res.sendFile(pubFolder+"/view_appoints.html")
-})
 
-app.post("/api",(req,res)=>{
-    res.end();
-    console.log(req.body);
-})
+app.post('/book', (req, res) => {
+    const { name, phNumber, email, date, time, doctor, remark } = req.body;
+    const sql = `INSERT INTO UserData (name, phNumber, email, date, time, doctor, remark) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    db.query(sql, [name, phNumber, email, date, time, doctor, remark], (err, result) => {
+      if (err) {
+        throw err;
+      }
+      res.status(201).sendFile(pubFolder+"/success.html");
+    });
+  });
+
+app.get('/mybooking', (req, res) => {
+    const number = req.body.number;
+    const sql = `SELECT * FROM UserData WHERE number = ${db.escape(number)}`;
+    db.query(sql, (err, result) => {
+        if (err) {
+            throw err;
+        }
+        res.render("mybooking", { result });
+    });
+});
+
+app.get('/viewall', (req, res) => {
+    const sql = 'SELECT * FROM UaserData';
+    db.query(sql, (err, results) => {
+        if (err) {
+            throw err;
+        }
+        res.render("allbooking", { results });
+    });
+});
 
 app.get("*",(req,res)=>{
-    res.send("404 ERROR")
+    res.send("404 ERROR");
 })
 
 
-
-
-
-
-
-
-app.listen(6000);
+app.listen(process.argv.PORT || 5000);

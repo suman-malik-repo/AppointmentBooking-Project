@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>hello</h2>
+    <div id="jsonContainer">
+        <table id="dataTable">
+          <!-- Table header will be added here -->
+          <tbody id="dataBody">
+            <!-- Table rows will be added here -->
+          </tbody>
+        </table>
+      </div>
+
+
+<script>
+    $.ajax({
+    type: "GET", // Modify this according to your AJAX request type
+    url: "/viewall", // Replace with the correct URL
+    success: function(data) {
+        // Hide the JSON container
+        $("#jsonContainer").hide();
+
+        // Create table header
+        const headerRow = $("<tr>");
+        for (const key in data[0]) {
+            headerRow.append($("<th>").text(key));
+        }
+        $("#dataTable").append($("<thead>").append(headerRow));
+
+        // Populate the table with data
+        const tbody = $("#dataBody");
+        data.forEach((item) => {
+            const row = $("<tr>");
+            for (const key in item) {
+                row.append($("<td>").text(item[key]));
+            }
+            tbody.append(row);
+        });
+    },
+    error: function(err) {
+        console.error("Error:", err);
+    }
+});
+
+</script>
+
+</body>
+</html>
