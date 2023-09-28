@@ -44,7 +44,7 @@ app.post('/book', (req, res) => {
   });
 
 app.get('/mybooking', (req, res) => {
-    const number = req.body.number;
+    const number = req.body.phNumber;
     const sql = `SELECT * FROM UserData WHERE number = ${db.escape(number)}`;
     db.query(sql, (err, result) => {
         if (err) {
