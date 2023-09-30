@@ -106,15 +106,15 @@ h3 {
                 <th>Remarks</th>
             </thead>
             <tbody>
-                <% for (let i = 0; i < data.length; i++) { %>
+                <% for (let i = 0; i < results.length; i++) { %>
                     <tr>
-                        <td><%= data[i].name %></td>
-                        <td><%= data[i].ph %></td>
-                        <td><%= data[i].email %></td>
-                        <td><%= data[i].doctor %></td>
-                        <td><%= data[i].date %></td>
-                        <td><%= data[i].time %></td>
-                        <td><%= data[i].remarks %></td>
+                        <td><%= results[i].name %></td>
+                        <td><%= results[i].ph %></td>
+                        <td><%= results[i].email %></td>
+                        <td><%= results[i].doctor %></td>
+                        <td><%= results[i].date %></td>
+                        <td><%= results[i].time %></td>
+                        <td><%= results[i].remarks %></td>
                     </tr>
                 <% } %>
             </tbody>
