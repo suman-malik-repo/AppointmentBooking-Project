@@ -34,7 +34,7 @@ app.get("/",(req,res)=>{
 
 app.post('/book', (req, res) => {
     const { name, phNumber, email, date, time, doctor, remark } = req.body;
-    const sql = `INSERT INTO UserData (name, phNumber, email, date, time, doctor, remark) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    const sql = `INSERT INTO userdata (name, phNumber, email, date, time, doctor, remark) VALUES (?, ?, ?, ?, ?, ?, ?)`;
     db.query(sql, [name, phNumber, email, date, time, doctor, remark], (err, result) => {
       if (err) {
         throw err;
@@ -45,7 +45,7 @@ app.post('/book', (req, res) => {
 
 app.get('/mybooking', (req, res) => {
     const number = req.body.phNumber;
-    const sql = `SELECT * FROM UserData WHERE number = ${db.escape(number)}`;
+    const sql = `SELECT * FROM userdata WHERE number = ${db.escape(number)}`;
     db.query(sql, (err, result) => {
         if (err) {
             throw err;
@@ -61,7 +61,7 @@ app.get('/mybooking', (req, res) => {
 });
 
 app.get('/viewall', (req, res) => {
-    const sql = 'SELECT * FROM UserData';
+    const sql = 'SELECT * FROM userdata';
     db.query(sql, (err, results) => {
         if (err) {
             throw err;
