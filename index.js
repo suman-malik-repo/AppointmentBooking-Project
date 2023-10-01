@@ -69,6 +69,27 @@ app.get('/viewall', (req, res) => {
         res.render("allbooking", { results });
     });
 });
+
+app.get('/reschedule', (req, res) => {
+    const { phNumber, newDate } = req.query;
+  
+    if (!phNumber || !newDate) {
+      return res.status(400).send('Both phone number and new date are required.');
+    }
+  
+    const updateSql = `UPDATE userdata SET date = ? WHERE phNumber = ?`;
+    db.query(updateSql, [newDate, phNumber], (err, result) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send('Error updating date in the database.');
+      }
+      if (result.affectedRows === 0) {
+        return res.status(404).send('User not found or no changes made.');
+      }
+      res.status(200).send('Date rescheduled successfully.');
+    });
+  });
+
 app.get("/book/main",(req,res)=>{
     res.sendFile(pubFolder+"/index.html");
 })
