@@ -69,7 +69,7 @@ app.get('/viewall', (req, res) => {
         res.render("allbooking", { results });
     });
 });
-
+//..........................................................Thats the extra code................................
 app.get('/reschedule', (req, res) => {
     const { phNumber, newDate } = req.query;
   
@@ -89,7 +89,7 @@ app.get('/reschedule', (req, res) => {
       res.status(200).send('Date rescheduled successfully.');
     });
   });
-
+//...................................................................................................................
 app.get("/book/main",(req,res)=>{
     res.sendFile(pubFolder+"/index.html");
 })
