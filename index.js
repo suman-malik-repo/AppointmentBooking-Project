@@ -36,7 +36,7 @@ app.get("/book",(req,res)=>{
 })
 
 app.post('/book', (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     const { name, phNumber, email, date, time, doctor, remark } = req.body;
     const sql = `INSERT INTO userdata (name, phNumber, email, date, time, doctor, remark) VALUES (?, ?, ?, ?, ?, ?, ?)`;
     db.query(sql, [name, phNumber, email, date, time, doctor, remark], (err, result) => {
