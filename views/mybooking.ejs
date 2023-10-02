@@ -95,31 +95,34 @@ h3 {
     
     <div class="container">
         <h3 class="heading">My Booked Appointmemt</h3>
-        <table class="table" style="margin-top: 40px; text-align: center;">
-            <thead class="table-dark">
-              <th>Name</th>
-              <th>Ph NO.</th>
-              <th>Email</th>
-              <th>Doctor</th>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Remarks</th>
-            </thead>
-            <tbody>
-                <% result.forEach(function(row) { %>
-                  <tr>
-                    <td><%= row.name %></td>
-                    <td><%= row.phNumber %></td>
-                    <td><%= row.email %></td>
-                    <td><%= row.doctor %></td>
-                    <td><%= row.date %></td>
-                    <td><%= row.time %></td>
-                    <td><%= row.remark %></td>
-                  </tr>
-                <% }); %>
-              </tbody>
-            
-          </table>
+        <div style="overflow-x: auto;">
+            <table class="table" style="margin-top: 40px; text-align: center;">
+                <thead class="table-dark" style="position: sticky; top: 0;">
+                  <th>Name</th>
+                  <th>Ph NO.</th>
+                  <th>Email</th>
+                  <th>Doctor</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Remarks</th>
+                </thead>
+                <tbody>
+                    <% result.forEach(function(row) { %>
+                      <tr>
+                        <td><%= row.name %></td>
+                        <td><%= row.phNumber %></td>
+                        <td><%= row.email %></td>
+                        <td><%= row.doctor %></td>
+                        <td><%= row.date %></td>
+                        <td><%= row.time %></td>
+                        <td><%= row.remark %></td>
+                      </tr>
+                    <% }); %>
+                  </tbody>
+                
+              </table>
+        </div>
+        
           <a href="/" class="btn btn-danger" style="padding-left: 50px;padding-right: 50px; margin-top: 50px; margin-left: 0px;">Home</a>
         
     </div>
