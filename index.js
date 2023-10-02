@@ -8,14 +8,14 @@ const app = express();
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const pubFolder = path.join(__dirname,"/public");
 
 const db = mysql.createConnection({
     host: "localhost",
-    user: "root",
+    user: "user",
     database: "HealthHepta",
     password: "12345678"
 });
@@ -31,8 +31,12 @@ db.connect((err)=>{
 app.get("/",(req,res)=>{
     res.sendFile(pubFolder+"/index.html")
 })
+app.get("/book",(req,res)=>{
+  res.sendFile(pubFolder+"/book_appoint.html")
+})
 
 app.post('/book', (req, res) => {
+    console.log(req.body);
     const { name, phNumber, email, date, time, doctor, remark } = req.body;
     const sql = `INSERT INTO userdata (name, phNumber, email, date, time, doctor, remark) VALUES (?, ?, ?, ?, ?, ?, ?)`;
     db.query(sql, [name, phNumber, email, date, time, doctor, remark], (err, result) => {
@@ -44,8 +48,10 @@ app.post('/book', (req, res) => {
   });
 
 app.get('/mybooking', (req, res) => {
-    const number = req.body.phNumber;
-    const sql = `SELECT * FROM userdata WHERE number = ${db.escape(number)}`;
+    // console.log(req.query.phNumber);
+    const number = req.query.phNumber;
+    // console.log(number);
+    const sql = `SELECT * FROM userdata WHERE phNumber = ${db.escape(number)}`;
     db.query(sql, (err, result) => {
         if (err) {
             throw err;
@@ -56,6 +62,7 @@ app.get('/mybooking', (req, res) => {
         } else {
             // If results are found, render the "mybooking" template with the result data
             res.render("mybooking", { result });
+            // console.log(result);
         }
     });
 });
@@ -90,7 +97,7 @@ app.get('/reschedule', (req, res) => {
     });
   });
 //...................................................................................................................
-app.get("/book/main",(req,res)=>{
+app.get("/main",(req,res)=>{
     res.sendFile(pubFolder+"/index.html");
 })
 
